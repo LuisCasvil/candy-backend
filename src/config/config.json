@@ -1,0 +1,44 @@
+{
+    "development": {
+        "username": "dulceria_c20d_user",
+        "password": "Sy1xDsZAsw7NfWQKiOITtoo4E5Sa2sci",
+        "database": "dulceria_c20d",
+        "host": "dpg-d3ui8u1r0fns73f7emn0-a.oregon-postgres.render.com",
+        "dialect": "postgres",
+        "port": "5432",
+        "dialectOptions": {
+            "ssl": {
+                "require": true,
+                "rejectUnauthorized": false
+            }
+        }
+    },
+    "test": {
+        "username": "dulceria_c20d_user",
+        "password": "Sy1xDsZAsw7NfWQKiOITtoo4E5Sa2sci",
+        "database": "dulceria_c20d",
+        "host": "dpg-d3ui8u1r0fns73f7emn0-a.oregon-postgres.render.com",
+        "dialect": "postgres",
+        "port": "5432",
+        "dialectOptions": {
+            "ssl": {
+                "require": true,
+                "rejectUnauthorized": false
+            }
+        }
+    },
+    "production": {
+        "username": "dulceria_c20d_user",
+        "password": "Sy1xDsZAsw7NfWQKiOITtoo4E5Sa2sci",
+        "database": "dulceria_c20d",
+        "host": "dpg-d3ui8u1r0fns73f7emn0-a.oregon-postgres.render.com",
+        "dialect": "postgres",
+        "port": "5432",
+        "dialectOptions": {
+            "ssl": {
+                "require": true,
+                "rejectUnauthorized": false
+            }
+        }
+    }
+}

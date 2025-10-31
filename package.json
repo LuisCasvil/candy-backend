@@ -6,13 +6,16 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc",
-    "start": "node dist/servcer.js",
+    "start": "node dist/server.js",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write .",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "migrate": "npx sequelize-cli db:migrate --config src/config/config.json",
+    "db:migrate:undo": "npx sequelize-cli db:migrate:undo",
+    "db:seed": "npx sequelize-cli db:seed:all"
   },
   "lint-staged": {
     "*.ts": [
@@ -36,6 +39,7 @@
     "@types/express": "^5.0.4",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.9.1",
+    "@types/sequelize": "^4.28.20",
     "@typescript-eslint/eslint-plugin": "^8.46.2",
     "@typescript-eslint/parser": "^8.46.2",
     "eslint": "^9.38.0",
@@ -46,6 +50,7 @@
     "jest": "^30.2.0",
     "lint-staged": "^16.2.6",
     "prettier": "^3.6.2",
+    "sequelize-cli": "^6.6.3",
     "ts-jest": "^29.4.5",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
@@ -54,6 +59,9 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "pg": "^8.16.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.7"
   }
 }
