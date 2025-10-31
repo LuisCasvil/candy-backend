@@ -9,7 +9,13 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*", // permite cualquier dominio
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "x-api-key"], // incluye headers que uses
+  }),
+);
 app.use(express.json());
 (async () => {
   await sequelize.sync({ alter: true });
