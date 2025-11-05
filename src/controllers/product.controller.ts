@@ -19,7 +19,7 @@ export const createProduct = controllerWrapper(async (req: Request) => {
     barcode,
     code,
     description,
-    saleTypeId,
+    saleType,
     salePrice,
     costPrice,
     bulkPrice,
@@ -30,10 +30,10 @@ export const createProduct = controllerWrapper(async (req: Request) => {
     profitPercent,
   } = req.body;
 
-  const saleTypeExist = await SaleType.findByPk(saleTypeId);
-  if (!saleTypeExist) throw ApiError.notFound("Sale Type is invalid.", saleTypeId);
+  const saleTypeExist = await SaleType.findByPk(saleType);
+  if (!saleTypeExist) throw ApiError.notFound("Sale Type is invalid.", saleType);
   // ejemplo de validación simple
-  if (!description || !saleTypeId) {
+  if (!description || !saleType) {
     throw ApiError.badRequest("description and saleType are required");
   }
 
@@ -41,7 +41,7 @@ export const createProduct = controllerWrapper(async (req: Request) => {
     barcode,
     code,
     description,
-    saleTypeId,
+    saleType,
     salePrice,
     costPrice,
     bulkPrice,

@@ -7,7 +7,7 @@ interface ProductAttributes {
   imageUrl?: string;
   code?: string;
   description: string;
-  saleTypeId: number;
+  saleType: string;
   costPrice: number;
   salePrice: number;
   departmentId?: number;
@@ -52,7 +52,7 @@ class Product
   extends Model<ProductAttributes, ProductCreationAttributes>
   implements ProductAttributes
 {
-  saleTypeId!: number;
+  saleType!: string;
   id?: number;
   barcode?: string;
   imageUrl?: string;
@@ -95,8 +95,8 @@ Product.init(
       type: DataTypes.STRING(255),
       allowNull: false,
     },
-    saleTypeId: {
-      type: DataTypes.INTEGER,
+    saleType: {
+      type: DataTypes.CHAR(1),
       allowNull: true,
     },
     costPrice: {

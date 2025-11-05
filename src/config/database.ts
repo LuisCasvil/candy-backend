@@ -11,6 +11,7 @@ export const sequelize = new Sequelize(process.env.DATABASE_URL!, {
       rejectUnauthorized: false,
     },
   },
+  timezone: "America/Mexico_City", // ✅ fuerza horario local
   // logging: false,
 });
 
